@@ -25,16 +25,35 @@ async function submitForm(event) {
 
         if (response.ok) {
             const data = await response.json();
+            console.log(data);
 
-            if (data.success && data.token) {
+            if (data.success && data.token && data.userId) {
                 localStorage.setItem('token', data.token);
-                alert('Inicio de sesión exitoso');
-                // Redirigir a otra página o realizar otras acciones después del inicio de sesión
+                localStorage.setItem('userId', data.userId);
+                console.log(localStorage.getItem('token'));//borrar en la version final
+                console.log(localStorage.getItem('userId'));//borrar en la version final
+
+
+                
+                    // Redirigir a otra página o realizar otras acciones después del inicio de sesión
+
+                    // Agregar condición para redirigir según el tipo de cuenta
+                    if (accountType === '1') {
+                        window.location.href = 'pagina1.html'; // Cambiar a la URL correcta
+                    } else if (accountType === '2') {
+                        window.location.href = 'pagina2.html'; // Cambiar a la URL correcta
+                    }
+               
             } else {
                 alert('Error de inicio de sesión: Credenciales incorrectas');
             }
         } else {
-            alert('Error en la solicitud: ' + response.statusText);
+            //alert('Error en la solicitud: ' + response.statusText);
+            Swal.fire({
+                title: 'Correo electronico o contraseña incorrectas',
+                text: response.statusText,
+                icon: 'error',
+            });
         }
     } catch (error) {
         console.error('Error:', error);

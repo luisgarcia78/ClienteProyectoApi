@@ -114,3 +114,86 @@ option{
     font-size: 24px;
     margin-bottom: 20px;
 }
+/*accediendo a el div dentro del formulario*/
+.form-row.justify-content-center input {
+    border-color: #17A2B8;
+    border-radius: 6px;
+}
+.form-row.justify-content-center label{
+    font-size: 20px;
+}
+.form-row.justify-content-center textarea{
+    width: 270px;
+    height: 40px;
+    border-color: #17A2B8;
+    border-radius: 6px;
+}
+.form-row.justify-content-center select {
+    border-color: #17A2B8;
+    border-radius: 6px;
+}
+
+
+/*estilos de comentarios.html*/
+
+
+.custom-form-group {
+    margin-bottom: 15px;
+}
+
+.custom-radio {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.custom-emoji {
+    vertical-align: middle;
+}
+
+.custom-form-group img {
+    height: 100px;
+    cursor: pointer;
+    border-width: 2px;
+}
+
+.custom-form-group input[type="radio"] {
+    display: none;
+    
+}
+/*select para mantener el color dentro de comentarios*/
+.selected {
+    background: rgba(46, 140, 255, 0.431);
+    border-radius: 60px;
+    border: 2px solid transparent;
+}
+
+.custom-form-group img {
+    height: 100px;
+    cursor: pointer;
+}
+
+.custom-form-group img:hover {
+    background: rgba(0, 157, 255, 0.723);
+    border-radius: 60px;
+    border: 2px solid transparent;
+}
+.custom-form-group textarea {
+border-color: #17a3b860;
+border-radius: 6px;
+}
+/**/
+
+/*footer */
+footer {
+ 
+    bottom: 0;
+    padding: 20px 0px;
+    border-top: 1px solid grey;
+    width: 100%;
+    text-align: center;
+    color: rgb(246, 246, 246);
+    background: rgba(0, 0, 0, 0.509);
+    position: fixed;
+  
+  
+  }

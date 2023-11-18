@@ -70,10 +70,12 @@ async function submitForm(event) {
 
                 if (responseCandidato.ok) {
                     const resultCandidato = await responseCandidato.json();
-                    console.log('Respuesta del servidor (Candidato):', resultCandidato);
+                    console.log('Respuesta del servidor (Candidato):', resultCandidato);//eliminar en la version final
 
                     // Puedes realizar acciones adicionales aquí según la respuesta de ambas APIs
                     alert('Registro exitoso');
+                    window.location.href = 'Login.html'; // Cambiar a la URL correcta
+
                 } else {
                     console.error('Error en la solicitud (Candidato):', responseCandidato.statusText);
                     alert('Error en el registro de candidato');
@@ -87,7 +89,12 @@ async function submitForm(event) {
             alert('Error en el registro de usuario');
         }
     } catch (error) {
-        console.error('Error:', error);
+        console.error('Error Documentos mayores a 1 MB:', error);
+        Swal.fire({
+            title: 'Ambos archivos exceden 1MB de espacio',
+            text: responseCandidato.statusText,
+            icon: 'error',
+        });
         alert('Error de red');
     }
 }
